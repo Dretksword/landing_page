@@ -1,0 +1,47 @@
+$ff-primary: 'Source Sans Pro', sans-serif;
+$ff-secondary: 'Source Code Pro', monospace;
+
+$fw-reg: 300;
+$fw-bold: 900;
+
+$clr-light: #fff;
+$clr-dark: #303030;
+$clr-accent: #16e0bd;
+
+$fs-h1: 3rem;
+$fs-h2: 2.25rem;
+$fs-h3: 1.25rem;
+$fs-body: 1rem;
+
+$bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+     0.125em 0.125em 0.25em rgba(0,0,0,.15);
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+    
+}
+
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+    
+}
+
+@mixin transition-ease {
+    transition:  transform 200ms ease-in-out;
+}
+
+@mixin transition-ease-750 {
+    transition: 
+        transform 750ms cubic-bezier(.5, 0, .5, 1),
+        opacity 250ms linear;
+}

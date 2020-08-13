@@ -1,0 +1,116 @@
+@include media-md {
+
+    .nav-toggle {
+        visibility: hidden;
+    }
+
+    .nav {
+        
+        background: transparent;
+        height: 5%;
+        text-align: right;
+        z-index: 100;
+    
+        transform: translateX(0%);
+        transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+    }
+
+    .nav__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        
+        background: rgba($clr-dark, 0.75);
+
+    }
+
+    .nav__link {
+        color: inherit;
+        font-weight: $fw-bold;
+        font-size: $fs-h3;
+    }
+
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .services {
+        margin-bottom: 4em;
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2em;
+    }
+
+    .section__title--about,
+    .section__subtitle--about {
+        grid-column: 1;
+    }
+
+    .section__subtitle--about {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200 + 4em);
+    }
+
+    .about-me__img  {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@include media-lg {
+    $fs-h1: 4.5rem;
+    $fs-h2: 3.75rem;
+    $fs-h3: 1.5rem;
+    $fs-body: 1.125rem;
+
+    
+    .services {
+        display: flex;
+        max-width: 1024px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service + .service {
+        margin-left: 2em;
+    }
+}
